@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PushNotification extends StatelessWidget {
+  const PushNotification({super.key});
 
   // This widget is the root of your application.
   @override
@@ -27,7 +27,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
- 
+
   void _incrementCounter() {
     setState(() {
       _counter++;
