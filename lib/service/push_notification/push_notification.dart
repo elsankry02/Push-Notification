@@ -7,10 +7,15 @@ class PushNotificationService {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
   static Future init() async {
     await messaging.requestPermission();
-    String? token = await messaging.getToken();
-    log(token ?? 'NO Token');
+    await messaging.getToken().then((value) {
+      getToken(value!);
+      log(value);
+    });
+
     FirebaseMessaging.onBackgroundMessage(onBackgroundMessageHandler);
   }
+
+  static getToken(String token) {}
 
   static Future<void> onBackgroundMessageHandler(
     RemoteMessage remoteMessage,
